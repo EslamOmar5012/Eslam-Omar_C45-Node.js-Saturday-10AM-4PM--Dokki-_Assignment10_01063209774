@@ -12,4 +12,5 @@ export { sendEmail } from "./services/email.service.js";
 export { generateOTP } from "./utils/otp.utils.js";
 export { generateAccessToken, generateRefreshToken, verifyAccessToken, verifyRefreshToken } from "./security/jwt.security.js";
 export { authenticate, authorize } from "./middleware/auth.middleware.js";
+export { validation } from "./middleware/validation.middleware.js";
 export { upload } from "./utils/multer.utils.js";
