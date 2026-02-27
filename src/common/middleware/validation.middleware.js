@@ -4,8 +4,8 @@ export const validation = (schemas) => {
     return (req, res, next) => {
         const validationErrors = [];
 
-        // Keys to validate: body, query, params, headers
-        const keys = Object.keys(schemas);
+        // Keys to validate: body, query, params, headers, file, files
+        const keys = ["body", "query", "params", "headers", "file", "files"];
 
         for (const key of keys) {
             if (schemas[key]) {

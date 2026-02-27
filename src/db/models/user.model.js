@@ -51,6 +51,7 @@ const userSchema = new mongoose.Schema(
       default: "",
     },
     coverProfilePictures: [String],
+    gallery: [String],
     provider: {
       type: Number,
       enum: [ProviderEnum.google, ProviderEnum.system],
@@ -71,6 +72,10 @@ const userSchema = new mongoose.Schema(
     expiresAt: {
       type: Date,
       index: { expires: 0 },
+    },
+    visitCount: {
+      type: Number,
+      default: 0,
     },
   },
   {

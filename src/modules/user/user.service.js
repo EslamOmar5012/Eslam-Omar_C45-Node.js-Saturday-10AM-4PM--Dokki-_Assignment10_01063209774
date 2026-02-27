@@ -184,3 +184,36 @@ export const refreshToken = async (token) => {
     throwError("Invalid or expired refresh token", 401);
   }
 };
+
+export const logout = async (userId) => {
+  const user = await dbRepository.updateById(UserModel, userId, {
+    chageCredentialTime: new Date()
+  });
+  if (!user) {
+    throwError("User not found", 404);
+  }
+  return { message: "Logged out successfully" };
+};
+
+export const getAnotherProfile = async (userId) => {
+  const user = await dbRepository.updateOne(
+    UserModel,
+    { _id: userId },
+    { $inc: { visitCount: 1 } }
+  );
+
+  if (!user) {
+    throwError("User not found", 404);
+  }
+
+  // Public profile
+  return {
+    _id: user._id,
+    userName: user.userName,
+    profilePic: user.profilePic,
+    coverProfilePictures: user.coverProfilePictures,
+    gallery: user.gallery,
+    gender: user.gender,
+    visitCount: user.visitCount // Include it here, let controller decide visibility
+  };
+};

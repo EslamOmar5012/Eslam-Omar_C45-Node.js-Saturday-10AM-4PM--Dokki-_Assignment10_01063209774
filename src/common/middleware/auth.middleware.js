@@ -21,6 +21,11 @@ export const authenticate = async (req, res, next) => {
             return throwError("Please verify your email first", 401);
         }
 
+        // Check if token was issued before the last credential change/logout
+        if (user.chageCredentialTime && parseInt(user.chageCredentialTime.getTime() / 1000) > decoded.iat) {
+            return throwError("Token revoked. Please login again.", 401);
+        }
+
         req.user = user;
         next();
     } catch (error) {

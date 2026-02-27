@@ -1035,27 +1035,31 @@
         {
           "name": "upload image",
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OThmMDYwNzBhZDE5Y2QxMzc3NDg5YSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3MjIzMTM1NCwiZXhwIjoxNzcyMjM0OTU0fQ.7H1fVCOPde5xxyKlERVmQCkhMBNmDMwyphihBviX-Jk",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "POST",
-            "header": [
-              {
-                "key": "authorization",
-                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGZhNDUzYzNmYmI0OGUwNmZjYjVlMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcxMDIzOTgxLCJleHAiOjE3NzEwMjc1ODF9.3xWS6khLl13eGvqcGLis5gpuQQSCewo6tZ1pm367iGo",
-                "type": "text"
-              }
-            ],
+            "header": [],
             "body": {
               "mode": "formdata",
               "formdata": [
                 {
                   "key": "image",
                   "type": "file",
-                  "uuid": "e06ccaa0-5dfc-407d-b2d2-d3d24603f90a",
-                  "src": "/C:/Users/eslam/Downloads/WhatsApp Image 2026-01-29 at 11.57.04 PM.jpeg"
+                  "uuid": "f9f4602f-2ac5-48bb-92af-9ffd57c2f234",
+                  "src": "postman-cloud:///1f1142c2-4d6c-4ed0-94cd-97feffcc7f09"
                 }
               ]
             },
             "url": {
-              "raw": "http://127.0.0.1:3000/user/upload-profile-pic",
+              "raw": "http://127.0.0.1:3000/user/profile-image",
               "protocol": "http",
               "host": [
                 "127",
@@ -1066,7 +1070,7 @@
               "port": "3000",
               "path": [
                 "user",
-                "upload-profile-pic"
+                "profile-image"
               ]
             }
           },
@@ -1075,31 +1079,20 @@
               "name": "success",
               "originalRequest": {
                 "method": "POST",
-                "header": [
-                  {
-                    "key": "authorization",
-                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OGZhNDUzYzNmYmI0OGUwNmZjYjVlMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzcxMDIzOTgxLCJleHAiOjE3NzEwMjc1ODF9.3xWS6khLl13eGvqcGLis5gpuQQSCewo6tZ1pm367iGo",
-                    "type": "text"
-                  }
-                ],
+                "header": [],
                 "body": {
                   "mode": "formdata",
                   "formdata": [
                     {
                       "key": "image",
                       "type": "file",
-                      "uuid": "e06ccaa0-5dfc-407d-b2d2-d3d24603f90a",
-                      "src": "/C:/Users/eslam/Downloads/WhatsApp Image 2026-01-29 at 11.57.04 PM.jpeg"
+                      "uuid": "f9f4602f-2ac5-48bb-92af-9ffd57c2f234",
+                      "src": "/C:/Eslam/wallpapers and icons/turbo-granny-1920x1080-19423.jpg"
                     }
-                  ],
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
+                  ]
                 },
                 "url": {
-                  "raw": "http://127.0.0.1:3000/user/upload-profile-pic",
+                  "raw": "http://127.0.0.1:3000/user/profile-image",
                   "protocol": "http",
                   "host": [
                     "127",
@@ -1110,7 +1103,7 @@
                   "port": "3000",
                   "path": [
                     "user",
-                    "upload-profile-pic"
+                    "profile-image"
                   ]
                 }
               },
@@ -1130,15 +1123,91 @@
                 },
                 {
                   "key": "Content-Length",
-                  "value": "170"
+                  "value": "237"
                 },
                 {
                   "key": "ETag",
-                  "value": "W/\"aa-9bChDSOvsISA/hJ3jpZSVT35FJw\""
+                  "value": "W/\"ed-T2ywLHYKJdgGN4g26JRXj8UMdic\""
                 },
                 {
                   "key": "Date",
-                  "value": "Fri, 13 Feb 2026 23:09:15 GMT"
+                  "value": "Fri, 27 Feb 2026 22:30:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Profile picture updated successfully and old one moved to gallery\",\n    \"data\": {\n        \"profilePic\": \"http://127.0.0.1:3000/uploads/profile-images/1772231447299-333428838-turbo-granny-1920x1080-19423.jpg\",\n        \"gallery\": []\n    }\n}"
+            },
+            {
+              "name": "success (second image)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "uuid": "f9f4602f-2ac5-48bb-92af-9ffd57c2f234",
+                      "src": "postman-cloud:///1f1142c2-4d6c-4ed0-94cd-97feffcc7f09"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:3000/user/profile-image",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "profile-image"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "344"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"158-ZqzjrzBbDJr4/9vUel9K7JUlUBA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 22:32:11 GMT"
                 },
                 {
                   "key": "Connection",
@@ -1150,7 +1219,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Profile picture uploaded successfully\",\n    \"data\": {\n        \"imageUrl\": \"http://127.0.0.1:3000/uploads/profile-pics/image-1771024154951-496513040.jpeg\"\n    }\n}"
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Profile picture updated successfully and old one moved to gallery\",\n    \"data\": {\n        \"profilePic\": \"http://127.0.0.1:3000/uploads/profile-images/1772231530992-829290492-wallpaperflare.com_wallpaper (1).jpg\",\n        \"gallery\": [\n            \"http://127.0.0.1:3000/uploads/profile-images/1772231447299-333428838-turbo-granny-1920x1080-19423.jpg\"\n        ]\n    }\n}"
             }
           ]
         },
@@ -1266,6 +1335,342 @@
               ],
               "cookie": [],
               "body": "{\n    \"status\": \"error\",\n    \"message\": \"Invalid Google token\",\n    \"stack\": \"Error: Invalid Google token\\n    at throwError (file:///C:/Users/eslam/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/Eslam-Omar-Mohamed_C45-Node.js-Saturday-10AM-4PM--Dokki-_Assignment10_01063209774-main/src/common/utils/throwError.utils.js:4:9)\\n    at Module.continueWithGoogle (file:///C:/Users/eslam/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/Eslam-Omar-Mohamed_C45-Node.js-Saturday-10AM-4PM--Dokki-_Assignment10_01063209774-main/src/modules/user/user.service.js:49:5)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\\n    at async continueWithGoogleController (file:///C:/Users/eslam/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/Eslam-Omar-Mohamed_C45-Node.js-Saturday-10AM-4PM--Dokki-_Assignment10_01063209774-main/src/modules/user/user.controller.js:82:20)\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OThmMDYwNzBhZDE5Y2QxMzc3NDg5YSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3MjIzMDk3MSwiZXhwIjoxNzcyMjM0NTcxfQ.T7bb7-4nH78qXfBEAbQvotOQ6A929R1Np1lfn-RkSuA",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"eslamelkhabery60@gmail.com\",\r\n    \"password\": \"10102001As@\"\r\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:3000/user/logout",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "logout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"eslamelkhabery60@gmail.com\",\r\n    \"password\": \"10102001As@\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:3000/user/logout",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "logout"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "56"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"38-m/mITeO9zyQJZ8vtKvCWsK+B4d4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 22:26:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Logged out successfully\"\n}"
+            },
+            {
+              "name": "failed",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"eslamelkhabery60@gmail.com\",\r\n    \"password\": \"10102001As@\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://127.0.0.1:3000/user/logout",
+                  "protocol": "http",
+                  "host": [
+                    "127",
+                    "0",
+                    "0",
+                    "1"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "logout"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "670"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"29e-9HEhbCoK5hcMAPuVWomlJE3n6nY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 22:26:34 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"error\",\n    \"message\": \"Token revoked. Please login again.\",\n    \"stack\": \"Error: Token revoked. Please login again.\\n    at throwError (file:///C:/Users/eslam/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/Eslam-Omar_C45-Node.js-Saturday-10AM-4PM--Dokki-_Assignment10_01063209774-main/src/common/utils/throwError.utils.js:4:9)\\n    at authenticate (file:///C:/Users/eslam/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/Eslam-Omar_C45-Node.js-Saturday-10AM-4PM--Dokki-_Assignment10_01063209774-main/src/common/middleware/auth.middleware.js:26:20)\\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "shared-profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/profile/6998f06070ad19cd1377489a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "profile",
+                "6998f06070ad19cd1377489a"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/user/profile/6998f06070ad19cd1377489a",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "profile",
+                    "6998f06070ad19cd1377489a"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "411"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19b-bPX/DjbrpadjSw1Y3MlLaOx1Z10\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 22:35:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [
+                {
+                  "expires": "Invalid Date",
+                  "domain": "",
+                  "path": ""
+                }
+              ],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"User profile fetched successfully\",\n    \"data\": {\n        \"_id\": \"6998f06070ad19cd1377489a\",\n        \"userName\": \"Eslam Omar\",\n        \"profilePic\": \"http://127.0.0.1:3000/uploads/profile-images/1772231530992-829290492-wallpaperflare.com_wallpaper (1).jpg\",\n        \"coverProfilePictures\": [],\n        \"gallery\": [\n            \"http://127.0.0.1:3000/uploads/profile-images/1772231447299-333428838-turbo-granny-1920x1080-19423.jpg\"\n        ],\n        \"gender\": \"male\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "delete profile pic",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OThmMDYwNzBhZDE5Y2QxMzc3NDg5YSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc3MjIzMTM1NCwiZXhwIjoxNzcyMjM0OTU0fQ.7H1fVCOPde5xxyKlERVmQCkhMBNmDMwyphihBviX-Jk",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/profile-image",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "3000",
+              "path": [
+                "user",
+                "profile-image"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/user/profile-image",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "3000",
+                  "path": [
+                    "user",
+                    "profile-image"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "",
+                  "type": "text"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4f-zZxZBI4IbMBkrzxdzLeXDghuFEM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 27 Feb 2026 22:51:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": \"success\",\n    \"message\": \"Profile picture deleted successfully from disk\"\n}"
             }
           ]
         }
